@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>react-application-deployment</groupId>
+    <artifactId>react-application-deployment-parent</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>ReactApplicationDeployment Parent</name>
+
+    <properties>
+        <app.finalName>react-application-deployment</app.finalName>
+
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.build.javaVersion>17</project.build.javaVersion>
+
+        <assembly.plugin.version>3.3.0</assembly.plugin.version>
+        <clean.plugin.version>3.1.0</clean.plugin.version>
+        <compiler.plugin.version>3.10.0</compiler.plugin.version>
+        <frontend.plugin.version>1.12.1</frontend.plugin.version>
+        <jacoco.plugin.version>0.8.7</jacoco.plugin.version>
+        <release.plugin.version>2.5.3</release.plugin.version>
+        <resources.plugin.version>3.2.0</resources.plugin.version>
+        <sonar.plugin.version>3.9.1.2184</sonar.plugin.version>
+        <surefire.plugin.version>2.22.2</surefire.plugin.version>
+        <war.plugin.version>3.3.2</war.plugin.version>
+
+        <logback.version>1.2.10</logback.version>
+        <sl4j.version>1.7.36</sl4j.version>
+        <spring.boot.version>2.6.4</spring.boot.version>
+        <springfox.swagger>3.0.0</springfox.swagger>
+
+        <ng.build.arguments>-- --prod=true</ng.build.arguments>
+
+        <sonar.coverage.exclusions>
+            **/application/config/**/*,
+            **/application/App.*
+        </sonar.coverage.exclusions>
+    </properties>
+
+    <modules>
+        <module>react-application-deployment-server</module>
+        <module>react-application-deployment-web</module>
+        <module>react-application-deployment-distrib</module>
+    </modules>
+
+    <build>
+        <finalName>react-application-deployment</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-clean-plugin</artifactId>
+                <version>${clean.plugin.version}</version>
+                <configuration>
+                    <filesets>
+                        <fileset>
+                            <directory>logs</directory>
+                            <followSymlinks>false</followSymlinks>
+                        </fileset>
+                        <fileset>
+                            <directory>output</directory>
+                            <followSymlinks>false</followSymlinks>
+                        </fileset>
+                    </filesets>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${compiler.plugin.version}</version>
+                <configuration>
+                    <source>${project.build.javaVersion}</source>
+                    <target>${project.build.javaVersion}</target>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>${war.plugin.version}</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>${release.plugin.version}</version>
+                <configuration>
+                    <tagNameFormat>v@{project.version}</tagNameFormat>
+                </configuration>
+            </plugin>
+
+            <!-- Tests -->
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>${jacoco.plugin.version}</version>
+                <configuration>
+                    <excludes>
+                        <exclude>application/config/**/*</exclude>
+                        <exclude>application/App.*</exclude>
+                    </excludes>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>prepare-agent</id>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                    <!-- attached to Maven test phase -->
+                    <execution>
+                        <id>report</id>
+                        <phase>test</phase>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${surefire.plugin.version}</version>
+                <configuration>
+                    <reportFormat>plain</reportFormat>
+                    <includes>
+                        <include>**/*Test*.java</include>
+                        <include>**/*IT*.java</include>
+                    </includes>
+                </configuration>
+            </plugin>
+
+            <!-- SonarQube analysis -->
+            <plugin>
+                <groupId>org.sonarsource.scanner.maven</groupId>
+                <artifactId>sonar-maven-plugin</artifactId>
+                <version>${sonar.plugin.version}</version>
+            </plugin>
+        </plugins>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>com.github.eirslett</groupId>
+                    <artifactId>frontend-maven-plugin</artifactId>
+                    <version>${frontend.plugin.version}</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- Logging -->
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-classic</artifactId>
+                <version>${logback.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>jul-to-slf4j</artifactId>
+                <version>${sl4j.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <scm>
+        <connection>scm:git:https://github.com/dbelob/react-application-deployment</connection>
+        <developerConnection>scm:git:https://github.com/dbelob/react-application-deployment</developerConnection>
+        <tag>HEAD</tag>
+    </scm>
+</project>
