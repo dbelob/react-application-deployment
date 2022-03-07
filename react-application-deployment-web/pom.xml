@@ -38,20 +38,11 @@
                             <goal>npm</goal>
                         </goals>
                         <configuration>
-                            <arguments>run-script build ${ng.build.arguments}</arguments>
+                            <arguments>run-script build</arguments>
                         </configuration>
                     </execution>
                 </executions>
             </plugin>
         </plugins>
     </build>
-
-  <profiles>
-      <profile>
-      <id>development</id>
-      <properties>
-          <ng.build.arguments />
-      </properties>
-    </profile>
-  </profiles>
 </project>
