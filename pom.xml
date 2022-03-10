@@ -25,7 +25,7 @@
         <surefire.plugin.version>2.22.2</surefire.plugin.version>
         <war.plugin.version>3.3.2</war.plugin.version>
 
-        <logback.version>1.2.10</logback.version>
+        <logback.version>1.2.11</logback.version>
         <sl4j.version>1.7.36</sl4j.version>
         <spring.boot.version>2.6.4</spring.boot.version>
         <springfox.swagger>3.0.0</springfox.swagger>
