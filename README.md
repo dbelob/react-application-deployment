@@ -3,7 +3,7 @@ React application for deployment testing.
 
 <a href="https://github.com/dbelob/react-application-deployment/actions"><img alt="GitHub Actions status" src="https://github.com/dbelob/react-application-deployment/workflows/Build/badge.svg"></a>
 [![codecov](https://codecov.io/gh/dbelob/react-application-deployment/branch/master/graph/badge.svg)](https://codecov.io/gh/dbelob/react-application-deployment)
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=dbelob_application-deployment&metric=alert_status)](https://sonarcloud.io/dashboard?id=dbelob_application-deployment)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=dbelob_react-application-deployment&metric=alert_status)](https://sonarcloud.io/dashboard?id=dbelob_react-application-deployment)
 
 ## Requirements
 
@@ -57,7 +57,7 @@ React application for deployment testing.
 
 1. Access the deployed web application at:
 
-    http://localhost:4200
+    http://localhost:3000
 
 ### Method 3
 
