@@ -1,0 +1,35 @@
+name: Publish Release
+
+on:
+  release:
+    types:
+      - created
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'zulu'
+          java-version: 17
+      - name: Cache Maven packages
+        uses: actions/cache@v2.1.7
+        with:
+          path: ~/.m2
+          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+          restore-keys: ${{ runner.os }}-m2
+      - name: Build with Maven
+        run: |
+          export MVN_ARGS="-DbuildNumberSuffix="
+          mvn ${MVN_ARGS} package
+          echo "PROJECT_VERSION=$(mvn ${MVN_ARGS} org.apache.maven.plugins:maven-help-plugin:3.1.0:evaluate -Dexpression=project.version -q -DforceStdout)" >> $GITHUB_ENV
+      - name: Upload ZIP
+        uses: JasonEtco/upload-to-release@master
+        with:
+          args: react-application-deployment-distrib/target/react-application-deployment-${{ env.PROJECT_VERSION }}.zip application/zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
