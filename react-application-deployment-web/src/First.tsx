@@ -1,23 +1,10 @@
-import React, { Component } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import { RestDataSource } from "./RestDataSource";
+import Numeral, { NumeralProps } from "./Numeral";
 
-type FirstProps = {};
-
-type FirstState = {
-    message: string;
-};
-
-export default class First extends Component<FirstProps, FirstState> {
-    private dataSource;
-
-    constructor(props: any) {
-        super(props);
-
-        this.state = {
-            message: ''
-        }
-        this.dataSource = new RestDataSource();
+export default class First extends Numeral {
+    constructor(props: NumeralProps) {
+        super(props, 'first');
     }
 
     render() {
@@ -46,9 +33,5 @@ export default class First extends Component<FirstProps, FirstState> {
                 </div>
             </div>
         );
-    }
-
-    componentDidMount() {
-        this.dataSource.getData(data => this.setState({message: data}));
     }
 }
