@@ -1,4 +1,6 @@
-import Axios from "axios";
+import Axios from "axios-observable";
+import { catchError } from "rxjs";
+import { AxiosObservable } from "axios-observable/lib/axios-observable.interface";
 
 export class HelloDataSource {
     private baseUrl = 'api/hello';
@@ -6,8 +8,13 @@ export class HelloDataSource {
     constructor() {
     }
 
-    getMessage(name: string, callback: (arg: any) => void) {
-        Axios.get(`${this.baseUrl}/message`, {params: {name: name}})
-            .then(response => callback(response.data));
+    getMessage(name: string): AxiosObservable<string> {
+        return Axios.get(`${this.baseUrl}/message`, {params: {name: name}})
+            .pipe(
+                catchError((response: Response) => {
+                    console.log('getMessage error, response: ' + JSON.stringify(response));
+                    throw response;
+                })
+            );
     }
 }

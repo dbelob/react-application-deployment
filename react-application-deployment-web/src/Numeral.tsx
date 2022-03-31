@@ -25,6 +25,9 @@ export default abstract class Numeral extends Component<NumeralProps, NumeralSta
     abstract render(): any;
 
     componentDidMount() {
-        this.dataSource.getMessage(this.name, data => this.setState({message: data}));
+        this.dataSource.getMessage(this.name)
+            .subscribe(response => {
+                this.setState({message: response.data});
+            });
     }
 }
