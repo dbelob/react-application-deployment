@@ -1,13 +1,18 @@
-import React, { Component } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
+import Numeral, { NumeralProps } from "./Numeral";
 
-export default class First extends Component {
+export default class First extends Numeral {
+    constructor(props: NumeralProps) {
+        super(props, 'first');
+    }
+
     render() {
         return (
             <div className="container p-2">
                 <h3 className="bg-info p-1 text-white text-center rounded">First page</h3>
 
-                <div>message</div>
+                <div>{this.state.message}</div>
 
                 <div className="row justify-content-center">
                     <div className="col-auto">
