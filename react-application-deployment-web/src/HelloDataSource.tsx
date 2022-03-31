@@ -5,9 +5,6 @@ import { AxiosObservable } from "axios-observable/lib/axios-observable.interface
 export class HelloDataSource {
     private baseUrl = 'api/hello';
 
-    constructor() {
-    }
-
     getMessage(name: string): AxiosObservable<string> {
         return Axios.get(`${this.baseUrl}/message`, {params: {name: name}})
             .pipe(
