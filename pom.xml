@@ -4,7 +4,7 @@
 
     <groupId>react-application-deployment</groupId>
     <artifactId>react-application-deployment-parent</artifactId>
-    <version>1.0.48</version>
+    <version>1.0.49-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>ReactApplicationDeployment Parent</name>
 
@@ -164,6 +164,6 @@
     <scm>
         <connection>scm:git:https://github.com/dbelob/react-application-deployment</connection>
         <developerConnection>scm:git:https://github.com/dbelob/react-application-deployment</developerConnection>
-        <tag>v1.0.48</tag>
+        <tag>HEAD</tag>
     </scm>
 </project>
