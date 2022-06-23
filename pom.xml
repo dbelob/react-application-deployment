@@ -27,7 +27,7 @@
 
         <logback.version>1.2.11</logback.version>
         <sl4j.version>1.7.36</sl4j.version>
-        <spring.boot.version>2.7.0</spring.boot.version>
+        <spring.boot.version>2.7.1</spring.boot.version>
         <springfox.swagger>3.0.0</springfox.swagger>
 
         <sonar.coverage.exclusions>
