@@ -1,5 +1,5 @@
-import { Component } from "react";
-import { HelloDataSource } from "./HelloDataSource";
+import { Component } from 'react';
+import { HelloDataSource } from './HelloDataSource';
 
 export interface NumeralProps {
 }

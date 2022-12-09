@@ -1,8 +1,8 @@
 import React from 'react';
-import { Navigate, Route, Routes } from "react-router-dom";
-import First from "./First";
-import Second from "./Second";
-import Third from "./Third";
+import { Navigate, Route, Routes } from 'react-router-dom';
+import First from './First';
+import Second from './Second';
+import Third from './Third';
 import './App.css';
 
 function App() {
