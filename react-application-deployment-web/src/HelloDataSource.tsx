@@ -1,6 +1,6 @@
-import Axios from "axios-observable";
-import { catchError } from "rxjs";
-import { AxiosObservable } from "axios-observable/lib/axios-observable.interface";
+import Axios from 'axios-observable';
+import { catchError } from 'rxjs';
+import { AxiosObservable } from 'axios-observable/lib/axios-observable.interface';
 
 export class HelloDataSource {
     private baseUrl = 'api/hello';

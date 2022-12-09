@@ -1,6 +1,6 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import Numeral, { NumeralProps } from "./Numeral";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import Numeral, { NumeralProps } from './Numeral';
 
 export default class Second extends Numeral {
     constructor(props: NumeralProps) {
