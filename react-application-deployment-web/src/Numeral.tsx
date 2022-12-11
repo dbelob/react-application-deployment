@@ -25,8 +25,8 @@ export default abstract class Numeral extends Component<NumeralProps, NumeralSta
 
     componentDidMount() {
         this.helloService.getMessage(this.name)
-            .subscribe(response => {
-                this.setState({message: response.data});
+            .subscribe(data => {
+                this.setState({message: data});
             });
     }
 }
