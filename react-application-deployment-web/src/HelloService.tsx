@@ -2,7 +2,7 @@ import Axios from 'axios-observable';
 import { catchError } from 'rxjs';
 import { AxiosObservable } from 'axios-observable/lib/axios-observable.interface';
 
-export class HelloDataSource {
+export class HelloService {
     private baseUrl = 'api/hello';
 
     getMessage(name: string): AxiosObservable<string> {

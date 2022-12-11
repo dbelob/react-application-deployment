@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import { HelloDataSource } from './HelloDataSource';
+import { HelloService } from './HelloService';
 
 export interface NumeralProps {
 }
@@ -10,7 +10,7 @@ export interface NumeralState {
 
 export default abstract class Numeral extends Component<NumeralProps, NumeralState> {
     private name: string;
-    private dataSource;
+    private helloService = new HelloService();
 
     constructor(props: NumeralProps, name: string) {
         super(props);
@@ -19,13 +19,12 @@ export default abstract class Numeral extends Component<NumeralProps, NumeralSta
             message: ''
         }
         this.name = name;
-        this.dataSource = new HelloDataSource();
     }
 
     abstract render(): any;
 
     componentDidMount() {
-        this.dataSource.getMessage(this.name)
+        this.helloService.getMessage(this.name)
             .subscribe(response => {
                 this.setState({message: response.data});
             });
