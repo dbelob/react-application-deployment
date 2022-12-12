@@ -1,10 +1,9 @@
 import { Component } from 'react';
 import { HelloService } from './HelloService';
 
-export interface NumeralProps {
-}
+export type NumeralProps = {}
 
-export interface NumeralState {
+export type NumeralState = {
     message: string;
 }
 
@@ -21,12 +20,12 @@ export default abstract class Numeral extends Component<NumeralProps, NumeralSta
         this.name = name;
     }
 
-    abstract render(): any;
-
     componentDidMount() {
         this.helloService.getMessage(this.name)
             .subscribe(data => {
                 this.setState({message: data});
             });
     }
+
+    abstract render(): any;
 }
