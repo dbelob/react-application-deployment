@@ -25,7 +25,7 @@
         <surefire.plugin.version>3.0.0</surefire.plugin.version>
         <war.plugin.version>3.3.2</war.plugin.version>
 
-        <spring.boot.version>3.0.5</spring.boot.version>
+        <spring.boot.version>3.0.6</spring.boot.version>
         <springfox.swagger>3.0.0</springfox.swagger>
 
         <node.version>v18.15.0</node.version>
