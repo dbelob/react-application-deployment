@@ -19,7 +19,10 @@ public class App extends SpringBootServletInitializer {
     public static void main(String[] args) {
         SpringApplication.run(App.class, args);
 
-        log.info("OS name: {}, OS version: {}, OS architecture: {}", System.getProperty("os.name"), System.getProperty("os.version"), System.getProperty("os.arch"));
-        log.info("JRE version: {}", System.getProperty("java.version"));
+        if (log.isInfoEnabled()) {
+            log.info("OS name: {}, OS version: {}, OS architecture: {}", System.getProperty("os.name"),
+                    System.getProperty("os.version"), System.getProperty("os.arch"));
+            log.info("JRE version: {}", System.getProperty("java.version"));
+        }
     }
 }
