@@ -9,7 +9,7 @@ React application for deployment testing.
 
 * [JDK 17+](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
 * [Apache Maven 3.9.0+](https://maven.apache.org/download.cgi)
-* [Node.js 18.15.0+](https://nodejs.org) (optional)
+* [Node.js 18.17.0+](https://nodejs.org) (optional)
 
 ## Running
 
