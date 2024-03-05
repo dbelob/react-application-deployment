@@ -4,7 +4,7 @@
 
     <groupId>react-application-deployment</groupId>
     <artifactId>react-application-deployment-parent</artifactId>
-    <version>1.0.475-SNAPSHOT</version>
+    <version>1.0.480-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>ReactApplicationDeployment Parent</name>
 
