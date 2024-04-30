@@ -5,7 +5,7 @@
     <parent>
         <groupId>react-application-deployment</groupId>
         <artifactId>react-application-deployment-parent</artifactId>
-        <version>1.0.528-SNAPSHOT</version>
+        <version>1.0.528</version>
     </parent>
 
     <artifactId>react-application-deployment-web</artifactId>
