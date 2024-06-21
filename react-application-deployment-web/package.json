@@ -18,7 +18,7 @@
     "react-scripts": "5.0.1",
     "rxjs": "^7.8.1",
     "typescript": "^5.4.5",
-    "web-vitals": "^4.1.1"
+    "web-vitals": "^4.2.0"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^7.13.1",
