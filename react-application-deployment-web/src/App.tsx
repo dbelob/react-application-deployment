@@ -1,9 +1,8 @@
-import React from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import First from './First';
 import Second from './Second';
 import Third from './Third';
-import './App.css';
+import './App.css'
 
 function App() {
     return (
@@ -16,4 +15,4 @@ function App() {
     );
 }
 
-export default App;
+export default App
