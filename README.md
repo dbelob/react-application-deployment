@@ -57,7 +57,7 @@ React application for deployment testing.
 
 1. Access the deployed web application at:
 
-    http://localhost:3000
+    http://localhost:5173
 
 ### Method 3
 
