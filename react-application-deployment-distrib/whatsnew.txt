@@ -1,4 +1,7 @@
 React Application Deployment
 
-Version 1.0.0 - ??? ??, 2022
+Version 1.1.0 - August 19, 2024
+* Migration from Create React App (CRA) to Vite.
+
+Version 1.0.0 - March 10, 2022
 * First release.

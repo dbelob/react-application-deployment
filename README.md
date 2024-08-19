@@ -1,5 +1,5 @@
 # React application deployment test
-React application for deployment testing.
+Simple application in *Java* (*Spring Boot*) and *React* (*Vite*).
 
 <a href="https://github.com/dbelob/react-application-deployment/actions"><img alt="GitHub Actions status" src="https://github.com/dbelob/react-application-deployment/workflows/Build/badge.svg"></a>
 [![codecov](https://codecov.io/gh/dbelob/react-application-deployment/branch/main/graph/badge.svg)](https://codecov.io/gh/dbelob/react-application-deployment)
