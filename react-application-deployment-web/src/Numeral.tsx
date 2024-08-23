@@ -8,10 +8,10 @@ export type NumeralState = {
 }
 
 export default abstract class Numeral extends Component<NumeralProps, NumeralState> {
-    private name: string;
+    private readonly name: string;
     private helloService = new HelloService();
 
-    constructor(props: NumeralProps, name: string) {
+    protected constructor(props: NumeralProps, name: string) {
         super(props);
 
         this.state = {
@@ -21,9 +21,8 @@ export default abstract class Numeral extends Component<NumeralProps, NumeralSta
     }
 
     componentDidMount() {
-        this.helloService.getMessage(this.name, response => {
-            this.setState({message: response.data});
-        });
+        this.helloService.getMessage(this.name)
+            .then(response => this.setState({message: response.data}));
     }
 
     abstract render(): any;
