@@ -74,7 +74,7 @@
                             <outputDirectory>${project.build.directory}/classes/static/</outputDirectory>
                             <resources>
                                 <resource>
-                                    <directory>${project.parent.basedir}/react-application-deployment-web/target/
+                                    <directory>${project.parent.basedir}/react-application-deployment-web/target/classes/static/
                                     </directory>
                                 </resource>
                             </resources>
