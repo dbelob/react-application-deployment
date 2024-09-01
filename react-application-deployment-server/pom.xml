@@ -31,6 +31,12 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>${spring.boot.version}</version>
                 <configuration>
+                    <excludes>
+                        <exclude>
+                            <groupId>react-application-deployment</groupId>
+                            <artifactId>react-application-deployment-web</artifactId>
+                        </exclude>
+                    </excludes>
                     <executable>true</executable>
                     <mainClass>application.App</mainClass>
                 </configuration>
