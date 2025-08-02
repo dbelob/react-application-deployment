@@ -28,7 +28,7 @@
         <spring.boot.version>3.5.4</spring.boot.version>
         <springfox.swagger>3.0.0</springfox.swagger>
 
-        <node.version>v22.17.0</node.version>
+        <node.version>v22.18.0</node.version>
 
         <sonar.coverage.exclusions>
             **/application/config/**/*,
