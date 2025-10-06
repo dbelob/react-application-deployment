@@ -12,7 +12,7 @@
         <app.finalName>react-application-deployment</app.finalName>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.build.javaVersion>21</project.build.javaVersion>
+        <project.build.javaVersion>25</project.build.javaVersion>
 
         <assembly.plugin.version>3.7.1</assembly.plugin.version>
         <clean.plugin.version>3.5.0</clean.plugin.version>
@@ -28,7 +28,7 @@
         <spring.boot.version>3.5.6</spring.boot.version>
         <springfox.swagger>3.0.0</springfox.swagger>
 
-        <node.version>v22.18.0</node.version>
+        <node.version>v22.20.0</node.version>
 
         <sonar.coverage.exclusions>
             **/application/config/**/*,
