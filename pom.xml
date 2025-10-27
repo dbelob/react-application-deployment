@@ -23,7 +23,7 @@
         <resources.plugin.version>3.3.1</resources.plugin.version>
         <sonar.plugin.version>5.2.0.4988</sonar.plugin.version>
         <surefire.plugin.version>3.5.4</surefire.plugin.version>
-        <war.plugin.version>3.4.0</war.plugin.version>
+        <war.plugin.version>3.5.0</war.plugin.version>
 
         <spring.boot.version>3.5.7</spring.boot.version>
         <springfox.swagger>3.0.0</springfox.swagger>
