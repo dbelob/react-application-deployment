@@ -9,7 +9,7 @@ Simple application in *Java* (*Spring Boot*) and *React* (*Vite*).
 
 * [JDK 25+](https://www.oracle.com/java/technologies/downloads/)
 * [Apache Maven 3.9.0+](https://maven.apache.org/download.cgi)
-* [Node.js 24.11.0+](https://nodejs.org) (optional)
+* [Node.js 24.12.0+](https://nodejs.org) (optional)
 
 ## Running
 
